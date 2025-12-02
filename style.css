@@ -1,1 +1,155 @@
-(contenu CSS ci-dessus que j'ai déjà fourni dans l'étape précédente)
+:root{
+  --bg:#0f1724;
+  --card-bg: rgba(255,255,255,0.06);
+  --glass-border: rgba(255,255,255,0.08);
+  --accent: rgba(99,102,241,0.95);
+  --accent-2: rgba(16,185,129,0.95);
+  --text: rgba(255,255,255,0.92);
+  --muted: rgba(255,255,255,0.6);
+  --glass-blur: 12px;
+  --radius: 14px;
+  --shadow: 0 6px 30px rgba(2,6,23,0.6);
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Reset & body */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(99,102,241,0.12), transparent 10%),
+              radial-gradient(900px 400px at 90% 90%, rgba(16,185,129,0.06), transparent 10%),
+              var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-size:16px;
+  line-height:1.4;
+  padding:32px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+}
+
+/* Frame */
+.container{
+  width:100%;
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns: 460px 1fr;
+  gap:28px;
+  align-items:center;
+}
+
+/* Left hero (brand) */
+.hero{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:var(--radius);
+  padding:28px;
+  border:1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+  box-shadow: var(--shadow);
+  min-height:420px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:18px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.logo{
+  width:56px;height:56px;border-radius:12px;
+  background:linear-gradient(135deg,var(--accent), #5b21b6);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow: 0 6px 18px rgba(99,102,241,0.12), inset 0 -6px 18px rgba(255,255,255,0.04);
+  font-weight:700;color:white;font-size:22px;
+}
+.hero h1{font-size:20px;color:var(--text);font-weight:700}
+.hero p{color:var(--muted);font-size:14px;max-width:360px}
+
+/* Right card (forms) */
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:var(--radius);
+  padding:26px;
+  border:1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+  box-shadow: var(--shadow);
+}
+
+.form-title{
+  display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;
+}
+.form-title h2{font-size:18px}
+.form-sub{color:var(--muted);font-size:13px}
+
+/* Inputs */
+.input{
+  display:flex;flex-direction:column;margin-bottom:12px;
+}
+.input label{font-size:13px;color:var(--muted);margin-bottom:8px}
+.input input[type="text"],
+.input input[type="email"],
+.input input[type="password"],
+.input select,
+.input textarea{
+  padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);
+  background:rgba(255,255,255,0.02);color:var(--text);outline:none;
+  transition:box-shadow .18s, transform .08s;
+}
+.input input:focus,
+.input select:focus,
+.input textarea:focus{
+  box-shadow: 0 6px 18px rgba(99,102,241,0.12);
+  transform:translateY(-1px);
+  border-color: rgba(99,102,241,0.18);
+}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:10px;
+  border:none;background:linear-gradient(90deg,var(--accent), #7c3aed);color:white;font-weight:600;
+  cursor:pointer;box-shadow: 0 10px 30px rgba(124,58,237,0.12);
+}
+.btn.secondary{
+  background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);
+}
+
+/* small helpers */
+.row{display:flex;gap:12px;align-items:center}
+.hint{font-size:13px;color:var(--muted);margin-top:8px}
+.small{font-size:13px;color:var(--muted)}
+
+/* dashboard tiles */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.tile{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);
+  text-align:center;
+}
+.tile h3{font-size:18px;margin-bottom:6px}
+.tile p{font-size:13px;color:var(--muted)}
+
+/* responsive */
+@media (max-width:980px){
+  .container{grid-template-columns:1fr; padding:18px; gap:18px}
+  .hero{order:2}
+  .card{order:1}
+  .tiles{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:520px){
+  body{padding:18px}
+  .tiles{grid-template-columns:1fr}
+  .logo{width:48px;height:48px}
+  .hero h1{font-size:18px}
+}
+
+/* file input tiny */
+.file-input{
+  display:flex;align-items:center;gap:10px;
+}
+.file-input input[type=file]{display:block}
