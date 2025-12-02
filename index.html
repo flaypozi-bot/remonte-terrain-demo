@@ -1,0 +1,42 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Connexion — Remontées terrain</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" role="main">
+    <div class="hero">
+      <div class="brand">
+        <div class="logo">RT</div>
+        <div>
+          <h1>Remontées Terrain</h1>
+          <div class="small">Plateforme de saisie rapide - FTTH</div>
+        </div>
+      </div>
+      <p>Collectez facilement les demandes terrain : photos, GPS, équipement impacté et suivi simplifié pour vos équipes.</p>
+      <div class="hint">Pas encore de compte ? <a href="signup.html" style="color:var(--accent);text-decoration:none;font-weight:600">Inscrivez-vous</a></div>
+    </div>
+    <div class="card">
+      <div class="form-title">
+        <h2>Connexion</h2>
+        <div class="form-sub">Accédez au portail collaborateur</div>
+      </div>
+      <form id="loginForm" class="mt">
+        <div class="input"><label>Email</label><input id="loginEmail" type="email" autocomplete="username" placeholder="adresse@domaine.com"></div>
+        <div class="input"><label>Mot de passe</label><input id="loginPassword" type="password" autocomplete="current-password" placeholder="Mot de passe"></div>
+        <div class="row" style="margin-top:14px;">
+          <button class="btn" type="submit">Se connecter</button>
+          <a class="btn secondary" href="signup.html" style="text-decoration:none">Inscription</a>
+        </div>
+        <div id="loginMsg" class="hint" style="margin-top:12px"></div>
+      </form>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

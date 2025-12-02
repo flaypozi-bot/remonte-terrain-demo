@@ -1,0 +1,67 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Interface — Remontées terrain</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" role="main" style="max-width:1000px">
+    <div class="card" style="grid-column:1/-1">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <div>
+          <h2>Tableau de bord</h2>
+          <div class="small">Suivi de vos demandes</div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center">
+          <div style="text-align:right">
+            <div class="small">Connecté en tant que</div>
+            <strong id="userNom">Utilisateur</strong>
+          </div>
+          <button id="logoutBtn" class="btn secondary">Se déconnecter</button>
+        </div>
+      </div>
+      <div class="tiles" style="margin-top:18px">
+        <div class="tile"><h3 id="countTotal">-</h3><p>Total de demandes</p></div>
+        <div class="tile"><h3 id="countInProgress">-</h3><p>En cours</p></div>
+        <div class="tile"><h3 id="countClosed">-</h3><p>Clôturées</p></div>
+      </div>
+      <hr style="margin:18px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
+      <div style="display:flex;gap:20px;flex-wrap:wrap">
+        <div style="flex:1;min-width:320px">
+          <h3>Nouvelle demande</h3>
+          <form id="demForm">
+            <div class="input"><label>Titre</label><input id="title" type="text" placeholder="Titre de la demande"></div>
+            <div class="input"><label>Type d'équipement impacté</label>
+              <select id="typeEquip">
+                <option>OTB</option><option>Câble OSP</option><option>Croix de lovage</option><option>SC</option><option>Poteau</option><option>Autre</option>
+              </select>
+            </div>
+            <div class="input"><label>Service</label>
+              <select id="service"><option>VAD</option><option>TECH FO</option><option>Agent Back office</option><option>Partenaire</option></select>
+            </div>
+            <div class="input"><label>Priorité</label><select id="prio"><option>Faible</option><option>Moyenne</option><option>Haute</option></select></div>
+            <div class="input"><label>Photo équipement</label><input id="photo" type="file" accept="image/*"></div>
+            <div class="input"><label>Coordonnées GPS</label><input id="coordGPS" placeholder="lat,long"></div>
+            <div class="input"><label>Commentaire</label><textarea id="comment" rows="4" placeholder="Détails (optionnel)"></textarea></div>
+            <div class="row" style="margin-top:10px">
+              <button class="btn" type="submit">Envoyer la demande</button>
+              <a class="btn secondary" href="index.html" style="text-decoration:none">Retour</a>
+            </div>
+            <div id="demMsg" class="hint" style="margin-top:8px"></div>
+          </form>
+        </div>
+        <div style="flex:0.9;min-width:260px">
+          <h3>Historique rapide</h3>
+          <div class="hint">Ici seront listées les dernières demandes (à implémenter via Flow/SharePoint ou client REST)</div>
+          <div id="recentList" style="margin-top:12px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

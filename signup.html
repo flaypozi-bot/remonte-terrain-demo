@@ -1,0 +1,45 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Inscription — Remontées terrain</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container" role="main">
+    <div class="hero">
+      <div class="brand">
+        <div class="logo">RT</div>
+        <div>
+          <h1>Inscription</h1>
+          <div class="small">Demande d’accès — création de compte</div>
+        </div>
+      </div>
+      <p>Remplissez le formulaire d’inscription. Un administrateur validera votre compte et vous enverra votre mot de passe temporaire.</p>
+      <div class="hint">Déjà inscrit ? <a href="index.html" style="color:var(--accent);text-decoration:none;font-weight:600">Se connecter</a></div>
+    </div>
+    <div class="card">
+      <div class="form-title">
+        <h2>Inscription</h2>
+        <div class="form-sub">Créez votre compte</div>
+      </div>
+      <form id="signupForm">
+        <div class="input"><label>Email</label><input id="email" type="email" placeholder="adresse@domaine.com" required></div>
+        <div class="input"><label>Nom complet</label><input id="nom" type="text" placeholder="Prénom Nom" required></div>
+        <div class="input"><label>Rôle</label>
+          <select id="role"><option>Technicien</option><option>Superviseur</option><option>Agent Back office</option></select>
+        </div>
+        <div style="margin-top:12px" class="row">
+          <button class="btn" type="submit">S'inscrire</button>
+          <a href="index.html" class="btn secondary" style="text-decoration:none">Retour</a>
+        </div>
+        <div id="message" class="hint" style="margin-top:12px"></div>
+      </form>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
